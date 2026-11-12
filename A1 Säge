@@ -1,0 +1,32 @@
+void setup()
+{
+  Serial.begin(115200); //Serielle Schnittstelle initialisieren; Baudrate auf 115200bps setzen
+  while(!Serial) //Serielle Schnittstelle (noch nicht) bereit?
+  {
+    delay(10); //warte 10ms
+  }
+  Serial.print("Serielle Schnittstelle bereit!\n");
+}
+
+void loop()
+{
+  int var = 0;
+
+  while(var < 10 ){
+    var++;
+
+     for(int i = 0; i <= var; i++){
+        if(i == var ){
+          Serial.print("*");
+        }else{
+          Serial.print(" ");
+        }
+      }
+    Serial.print("\r\n");
+
+  }
+  for(int i = 0; i <= 10; i++){
+    Serial.print("*");
+  }
+}
+
